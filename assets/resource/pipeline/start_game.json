@@ -1,0 +1,104 @@
+{
+    "启动游戏": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "StartApp",
+            "param": {
+                "package": "com.bilibili.fatego"
+            }
+        },
+        "next": [
+            "请点击游戏界面"
+        ]
+    },
+    "请点击游戏界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "请点击游戏界面"
+                ],
+                "roi": [
+                    456,
+                    611,
+                    368,
+                    101
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "点击屏幕"
+        ]
+    },
+    "点击屏幕": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "点击屏幕"
+                ],
+                "roi": [
+                    423,
+                    507,
+                    422,
+                    145
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "关闭游戏公告"
+        ]
+    },
+    "关闭游戏公告": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "关闭游戏公告.png"
+                ],
+                "roi": [
+                    1034,
+                    2,
+                    245,
+                    156
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "识别游戏主界面"
+        ]
+    },
+    "识别游戏主界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "通知",
+                "roi": [
+                    0,
+                    0,
+                    398,
+                    265
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        }
+    }
+}
