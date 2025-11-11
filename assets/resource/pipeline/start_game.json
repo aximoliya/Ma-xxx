@@ -19,7 +19,7 @@
             "type": "OCR",
             "param": {
                 "expected": [
-                    "请点击游戏界面"
+                    "点击游戏界面"
                 ],
                 "roi": [
                     456,
@@ -33,6 +33,7 @@
             "type": "Click",
             "param": {}
         },
+        "timeout": 30000,
         "next": [
             "点击屏幕"
         ]
@@ -99,6 +100,56 @@
         "action": {
             "type": "DoNothing",
             "param": {}
-        }
+        },
+        "next": [
+            "登录奖励"
+        ]
+    },
+    "登录奖励": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "登录奖励"
+                ],
+                "roi": [
+                    363,
+                    37,
+                    504,
+                    182
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "timeout": 5000,
+        "next": [
+            "关闭"
+        ]
+    },
+    "关闭": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "关闭"
+                ],
+                "roi": [
+                    390,
+                    476,
+                    506,
+                    200
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "登录奖励"
+        ]
     }
 }

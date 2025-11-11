@@ -7,5 +7,28 @@
         "custom_recognition": "my_reco_222",
         "action": "Custom",
         "custom_action": "my_action_111"
+    },
+    "OCRTest": {
+        "recognition": "OCR",
+        "expected": "队伍",
+        "roi": [
+            128,
+            566,
+            438,
+            153
+        ],
+        "action": "DoNothing"
+    },
+    "ImageTest": {
+        "recognition": "TemplateMatch",
+        "template": "自动编队.png",
+        "roi": [
+            128,
+            566,
+            438,
+            153
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing"
     }
 }

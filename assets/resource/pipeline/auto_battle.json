@@ -1,0 +1,232 @@
+{
+    "队伍确认界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "队伍确认"
+                ],
+                "roi": [
+                    997,
+                    1,
+                    274,
+                    120
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "选择队伍"
+        ],
+        "interrupt": [
+            "左滑"
+        ]
+    },
+    "选择队伍": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "拾伍"
+                ],
+                "roi": [
+                    420,
+                    34,
+                    466,
+                    99
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "自动编队"
+        ]
+    },
+    "自动编队": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    128,
+                    566,
+                    438,
+                    153
+                ],
+                "template": [
+                    "自动编队.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "自动编成"
+        ]
+    },
+    "自动编成": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "自动编成"
+                ],
+                "roi": [
+                    764,
+                    391,
+                    333,
+                    297
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "决定"
+        ]
+    },
+    "决定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    907,
+                    1,
+                    372,
+                    718
+                ],
+                "expected": [
+                    "决定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "开始任务"
+        ]
+    },
+    "左滑": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    882,
+                    367,
+                    1,
+                    1
+                ],
+                "end": [
+                    [
+                        526,
+                        373,
+                        1,
+                        1
+                    ]
+                ]
+            }
+        }
+    },
+    "开始任务": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    907,
+                    1,
+                    372,
+                    718
+                ],
+                "expected": [
+                    "决定"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "跳过",
+            "进入战斗界面"
+        ]
+    },
+    "跳过": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    907,
+                    1,
+                    372,
+                    718
+                ],
+                "expected": [
+                    "跳过"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "是"
+        ]
+    },
+    "是": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "是"
+                ],
+                "roi": [
+                    584,
+                    397,
+                    533,
+                    322
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        }
+    },
+    "进入战斗界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "攻击"
+                ],
+                "roi": [
+                    943,
+                    386,
+                    336,
+                    333
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        }
+    }
+}
