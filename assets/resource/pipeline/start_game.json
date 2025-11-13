@@ -11,7 +11,8 @@
             }
         },
         "next": [
-            "请点击游戏界面"
+            "请点击游戏界面",
+            "服务器维护"
         ]
     },
     "请点击游戏界面": {
@@ -151,5 +152,36 @@
         "next": [
             "登录奖励"
         ]
+    },
+    "服务器维护": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "服务器维护"
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "退出"
+        ]
+    },
+    "退出": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "退出"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        }
     }
 }

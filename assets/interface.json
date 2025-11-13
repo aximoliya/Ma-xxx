@@ -3,14 +3,6 @@
         {
             "name": "安卓端",
             "type": "Adb"
-        },
-        {
-            "name": "桌面端",
-            "type": "Win32",
-            "win32": {
-                "class_regex": ".*",
-                "window_regex": "Visual Studio"
-            }
         }
     ],
     "resource": [
@@ -28,7 +20,7 @@
             ]
         }
     ],
-    "agent_demo": {
+    "agent": {
         "child_exec": "python",
         "child_args": [
             "{PROJECT_DIR}/agent/main.py"
@@ -61,10 +53,6 @@
         {
             "name": "启动游戏",
             "entry": "启动游戏"
-        },
-        {
-            "name": "自动战斗",
-            "entry": "队伍确认界面"
         }
     ],
     "option": {
@@ -74,7 +62,7 @@
                     "name": "文本1",
                     "pipeline_override": {
                         "OcrTask": {
-                            "text": "文本1"
+                            "expected": "文本1"
                         }
                     }
                 },
@@ -82,7 +70,7 @@
                     "name": "文本2",
                     "pipeline_override": {
                         "OcrTask": {
-                            "text": "文本2"
+                            "expected": "文本2"
                         }
                     }
                 }
