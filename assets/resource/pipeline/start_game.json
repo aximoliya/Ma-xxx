@@ -1,5 +1,12 @@
 {
-    "启动游戏": {
+    "__mpe_config_启动游戏": {
+        "__mpe_code": {
+            "prefix": "SG",
+            "filename": "启动游戏",
+            "version": "v0.5.5"
+        }
+    },
+    "SG_启动游戏": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -10,12 +17,22 @@
                 "package": "com.bilibili.fatego"
             }
         },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 15
+            }
+        },
         "next": [
-            "请点击游戏界面",
-            "服务器维护"
+            "SG_请点击游戏界面",
+            "SG_服务器维护"
+        ],
+        "interrupt": [
+            "SG_资料更新",
+            "SG_加载中"
         ]
     },
-    "请点击游戏界面": {
+    "SG_请点击游戏界面": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -34,12 +51,20 @@
             "type": "Click",
             "param": {}
         },
-        "timeout": 30000,
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 0
+            }
+        },
         "next": [
-            "点击屏幕"
+            "SG_点击屏幕"
+        ],
+        "interrupt": [
+            "SG_登录界面小广告"
         ]
     },
-    "点击屏幕": {
+    "SG_点击屏幕": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -58,11 +83,20 @@
             "type": "Click",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 0
+            }
+        },
         "next": [
-            "关闭游戏公告"
+            "SG_关闭游戏公告"
+        ],
+        "interrupt": [
+            "SG_继续之前战斗"
         ]
     },
-    "关闭游戏公告": {
+    "SG_关闭游戏公告": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -81,20 +115,31 @@
             "type": "Click",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 0
+            }
+        },
         "next": [
-            "识别游戏主界面"
+            "SG_识别游戏主界面"
+        ],
+        "interrupt": [
+            "SG_登录奖励"
         ]
     },
-    "识别游戏主界面": {
+    "SG_识别游戏主界面": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
-                "expected": "通知",
                 "roi": [
-                    0,
-                    0,
-                    398,
-                    265
+                    1190,
+                    43,
+                    90,
+                    250
+                ],
+                "template": [
+                    "主界面标识.png"
                 ]
             }
         },
@@ -102,11 +147,17 @@
             "type": "DoNothing",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 0
+            }
+        },
         "next": [
-            "登录奖励"
+            "SG_关闭"
         ]
     },
-    "登录奖励": {
+    "SG_登录奖励": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -125,12 +176,17 @@
             "type": "DoNothing",
             "param": {}
         },
-        "timeout": 5000,
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 219
+            }
+        },
         "next": [
-            "关闭"
+            "SG_关闭"
         ]
     },
-    "关闭": {
+    "SG_关闭": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -138,10 +194,10 @@
                     "关闭"
                 ],
                 "roi": [
-                    390,
-                    476,
-                    506,
-                    200
+                    186,
+                    292,
+                    910,
+                    416
                 ]
             }
         },
@@ -149,11 +205,15 @@
             "type": "Click",
             "param": {}
         },
-        "next": [
-            "登录奖励"
-        ]
+        "timeout": 5000,
+        "__mpe_code": {
+            "position": {
+                "x": 1502,
+                "y": 212
+            }
+        }
     },
-    "服务器维护": {
+    "SG_服务器维护": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -166,11 +226,17 @@
             "type": "DoNothing",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 438
+            }
+        },
         "next": [
-            "退出"
+            "SG_退出"
         ]
     },
-    "退出": {
+    "SG_退出": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -182,6 +248,157 @@
         "action": {
             "type": "Click",
             "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 438
+            }
+        }
+    },
+    "SG_资料更新": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "资料更新"
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 627
+            }
+        },
+        "next": [
+            "SG_开始更新资料"
+        ]
+    },
+    "SG_开始更新资料": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "开始更新资料"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 627
+            }
+        }
+    },
+    "SG_登录界面小广告": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "登录界面小广告叉.png"
+                ],
+                "roi": [
+                    863,
+                    181,
+                    121,
+                    119
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 219
+            }
+        }
+    },
+    "SG_加载中": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "加载中"
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 816
+            }
+        }
+    },
+    "SG_继续之前战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "继续之前"
+                ],
+                "roi": [
+                    502,
+                    226,
+                    243,
+                    166
+                ]
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 916,
+                "y": 494
+            }
+        },
+        "next": [
+            "SG_不进入"
+        ]
+    },
+    "SG_不进入": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "不进入",
+                    "不进人"
+                ],
+                "roi": [
+                    252,
+                    447,
+                    377,
+                    203
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1258,
+                "y": 505
+            }
         }
     }
 }

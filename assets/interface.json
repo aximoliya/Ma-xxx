@@ -24,7 +24,8 @@
         "child_exec": "python",
         "child_args": [
             "{PROJECT_DIR}/agent/main.py"
-        ]
+        ],
+        "identifier": "8e68e521-152b-425a-9333-7383243cdebe"
     },
     "task": [
         {
@@ -52,7 +53,7 @@
         },
         {
             "name": "启动游戏",
-            "entry": "启动游戏"
+            "entry": "SG_启动游戏"
         }
     ],
     "option": {

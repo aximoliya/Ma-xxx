@@ -1,5 +1,12 @@
 {
-    "队伍确认界面": {
+    "__mpe_config_自动战斗": {
+        "__mpe_code": {
+            "prefix": "AB",
+            "filename": "自动战斗",
+            "version": "v0.5.5"
+        }
+    },
+    "AB_队伍确认界面": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -18,14 +25,20 @@
             "type": "DoNothing",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 0,
+                "y": 0
+            }
+        },
         "next": [
-            "选择队伍"
+            "AB_选择队伍"
         ],
         "interrupt": [
-            "左滑"
+            "AB_左滑"
         ]
     },
-    "选择队伍": {
+    "AB_选择队伍": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -44,11 +57,17 @@
             "type": "DoNothing",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 0
+            }
+        },
         "next": [
-            "自动编队"
+            "AB_自动编队"
         ]
     },
-    "自动编队": {
+    "AB_自动编队": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
@@ -67,11 +86,17 @@
             "type": "Click",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 580,
+                "y": 0
+            }
+        },
         "next": [
-            "自动编成"
+            "AB_自动编成"
         ]
     },
-    "自动编成": {
+    "AB_自动编成": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -90,11 +115,17 @@
             "type": "Click",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 870,
+                "y": 0
+            }
+        },
         "next": [
-            "决定"
+            "AB_决定"
         ]
     },
-    "决定": {
+    "AB_决定": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -113,11 +144,17 @@
             "type": "Click",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 1160,
+                "y": 0
+            }
+        },
         "next": [
-            "开始任务"
+            "AB_开始任务"
         ]
     },
-    "左滑": {
+    "AB_左滑": {
         "recognition": {
             "type": "DirectHit",
             "param": {}
@@ -140,9 +177,15 @@
                     ]
                 ]
             }
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 290,
+                "y": 219
+            }
         }
     },
-    "开始任务": {
+    "AB_开始任务": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -153,7 +196,7 @@
                     718
                 ],
                 "expected": [
-                    "决定"
+                    "开始任务"
                 ]
             }
         },
@@ -161,12 +204,18 @@
             "type": "Click",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 1450,
+                "y": 0
+            }
+        },
         "next": [
-            "跳过",
-            "进入战斗界面"
+            "AB_跳过",
+            "AB_进入战斗界面"
         ]
     },
-    "跳过": {
+    "AB_跳过": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -185,11 +234,17 @@
             "type": "Click",
             "param": {}
         },
+        "__mpe_code": {
+            "position": {
+                "x": 1740,
+                "y": 0
+            }
+        },
         "next": [
-            "是"
+            "AB_是"
         ]
     },
-    "是": {
+    "AB_是": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -207,26 +262,59 @@
         "action": {
             "type": "Click",
             "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2030,
+                "y": 0
+            }
         }
     },
-    "进入战斗界面": {
+    "AB_进入战斗界面": {
         "recognition": {
             "type": "OCR",
             "param": {
                 "expected": [
-                    "攻击"
+                    "御主"
                 ],
                 "roi": [
-                    943,
-                    386,
-                    336,
-                    333
+                    1082,
+                    213,
+                    198,
+                    196
                 ]
             }
         },
         "action": {
             "type": "DoNothing",
             "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 1740,
+                "y": 248
+            }
+        },
+        "next": [
+            "AB_点技能"
+        ]
+    },
+    "AB_点技能": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "skill_ocr_detection"
+            }
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "__mpe_code": {
+            "position": {
+                "x": 2037,
+                "y": 264
+            }
         }
     }
 }
